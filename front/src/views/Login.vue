@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import Form from '../components/Form.vue'
 </script>
 
 <template>
   <div id="container">
-    <h1>Haks 2024</h1>
+    <Form />
   </div>
 </template>
 
@@ -13,6 +14,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #27374D;
 }
 
 h1 {
