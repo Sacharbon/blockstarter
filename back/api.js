@@ -1,10 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser')
+const xrpl = require('xrpl');
 const fs = require('fs');
 const { createToken, verifyToken, getTokenData } = require('./jwt');
 const { mintNFT, connectWallet } = require('./nft');
 const { pinFileToIPFS, createNftMetadata } = require('./pinata');
-const { get } = require('http');
 const ipfsUrl = "https://crimson-active-cuckoo-676.mypinata.cloud/ipfs/"
 
 function getUser(username) {
@@ -30,7 +30,6 @@ function addUser(username, password, address) {
     fs.writeFileSync('users.txt', users.join('\n'));
 }
 
-
 function StartApi() {
     const app = express();
     const port = 3000;
@@ -39,17 +38,27 @@ function StartApi() {
 
     app.post('/signup', parser, async (req, res) => {
         // get the username and password from the request body
-        const { username, password, address } = req.body;
-        console.log(username, password, address)
-        let accountAddress = "azerty"
+        var { username, password, seed } = req.body;
+        console.log(username, password, seed)
         user = getUser(username)
         if (user || !username || !password) {
             res.status(400).json({ error: 'Invalid data' });
             return;
         }
+        var AccountAddress
+        if (seed == "") {
+            const client = new xrpl.Client(process.env.NET)
+            await client.connect()
+            const { wallet: wallet, balance: balance1 } = await client.fundWallet()
+            AccountAddress = wallet.seed
+        } else {
+            AccountAddress = seed
+        }
+        console.log("address", AccountAddress)
         // get user from db
-        addUser(username, password, address);
-        jwt = createToken({ username, password, address }, process.env.JWT_SECRET, '1h')
+        addUser(username, password, AccountAddress);
+        seed = AccountAddress
+        jwt = createToken({ username, password, seed }, process.env.JWT_SECRET, '1h')
         // return a success message if the username and password are correct
         res.json({ message: 'Sign up successful', jwt: jwt });
     });
@@ -57,7 +66,7 @@ function StartApi() {
     app.post('/signin', parser, async (req, res) => {
         // get the username and password from the request body
         const { username, password } = req.body;
-        console.log(username, password, address)
+        console.log(username, password, seed)
         if (!username || !password) {
             res.status(400).json({ error: 'Invalid data' });
             return;
@@ -65,9 +74,8 @@ function StartApi() {
         const user = getUser(username);
         console.log(user)
         // check if the username and password are correct
-        if (user && (user.password === password || user.accountAddress === address)) {
-            accountAddress = user.accountAddress
-            jwt = createToken({ username, password, accountAddress }, process.env.JWT_SECRET, '1h')
+        if (user && (user.password === password || user.accountAddress === seed)) {
+            jwt = createToken({ username, password, seed }, process.env.JWT_SECRET, '1h')
             // return a success message if the username and password are correct
             res.json({ message: 'Sign in successful', jwt: jwt });
         } else {
@@ -86,17 +94,18 @@ function StartApi() {
             return;
         }
         // get the account address from the token
-        const accountAddress = getTokenData(jwt).address;
+        const accountAddress = getTokenData(jwt).seed;
         // create the metadata for the NFT
-        const metadata = createNftMetadata(projectName, amount, date);
+        const ipfsHash = await createNftMetadata(projectName, amount, date);
         // pin the metadata to IPFS
-        const ipfsHash = await pinFileToIPFS(metadata);
-        console.log(ipfsHash)
+        console.log(ipfsUrl + ipfsHash)
+        console.log("address", accountAddress)
         const [wallet, client] = await connectWallet(accountAddress, process.env.NET)
         // mint the nft with the ipfs hash
-        mintNFT(wallet, client, ipfsUrl + ipfsHash, 0, "", 0, 1);
+        tx = await mintNFT(wallet, client, ipfsUrl + ipfsHash, 0, "", 0, 1);
+        console.log(tx);
         // return the IPFS hash as a response
-        res.json({ "ipfsHash": ipfsHash });
+        res.json({ "url": ipfsUrl + ipfsHash });
     });
 
     app.get('/projects', (req, res) => {
