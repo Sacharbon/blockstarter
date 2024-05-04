@@ -31,16 +31,17 @@ input {
 h1 {
   height: 6vh;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 4rem;
   padding-bottom: 0;
 }
 
 h2 {
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 4rem;
   background-image: linear-gradient(to right, #003078 0%, #5ea0ff 50%, #3a8bff 100%);  -webkit-background-clip: text; /* Safari */
   background-clip: text;
   color: transparent;
+  margin-bottom: 5vh;
 }
 
 #container {

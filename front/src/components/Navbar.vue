@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import 'vuesax/dist/vuesax.css'
+
 </script>
 
 <template>

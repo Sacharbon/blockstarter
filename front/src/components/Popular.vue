@@ -16,7 +16,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <Carousel>
+  <Carousel :style="{ marginTop:'10vh' }">
     <Slide v-for="slide in 10" :key="slide">
       <div class="carousel__item">{{ slide }}</div>
     </Slide>
