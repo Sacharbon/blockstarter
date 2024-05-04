@@ -10,7 +10,7 @@ async function connectWallet(seed, net) {
     return [standby_wallet, client]
 }
 
-async function mintNFT(wallet, client, uri, flags, transferfee, tokenTaxon) {
+async function mintNFT(wallet, client, uri, flags, issuer, transferfee, tokenTaxon) {
     const transactionJson = {
         TransactionType: "NFTokenMint",
         Account: wallet.address,
@@ -18,6 +18,9 @@ async function mintNFT(wallet, client, uri, flags, transferfee, tokenTaxon) {
         TransferFee: transferfee,
         NFTokenTaxon: tokenTaxon,
         URI: xrpl.convertStringToHex(uri),
+    }
+    if (issuer) {
+        transactionJson.Issuer = issuer
     }
     const tx = await client.submitAndWait(transactionJson, { wallet: wallet} )
     results = '\nTransaction result: '+ tx.result.meta.TransactionResult
@@ -44,7 +47,7 @@ const tokenTaxon = 1
 
 async function main() {
     const [wallet, client] = await connectWallet(seed, net)
-    await mintNFT(wallet, client, uri, flags, transferfee, tokenTaxon)
+    await mintNFT(wallet, client, uri, flags, "",transferfee, tokenTaxon)
     const nfts = await getNfts(wallet, client)
     client.disconnect()
 }
