@@ -16,8 +16,4 @@ import Form from '../components/Form.vue'
   height: 100vh;
   background-color: #27374D;
 }
-
-h1 {
-  font-size: 3rem;
-}
 </style>
