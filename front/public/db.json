@@ -1,0 +1,36 @@
+[
+    {
+        "ProjectName": "Big Buck Bunny",
+        "Title": "Big Buck Bunny: The Movie",
+        "AmountRaised": 51347,
+        "AmountGoal": 100000,
+        "StartDate": "2024-05-01 00:00:00",
+        "EndDate": "2024-05-10 00:00:00",
+        "NbInvestissors": 2,
+        "NbDaysLeft": 10,
+        "Description": "Big Buck Bunny tells the story of a giant rabbit with a heart bigger than himself. When one sunny day three rodents rudely harass him, something snaps... and the rabbit ain't no bunny anymore! In the typical cartoon tradition he prepares the nasty rodents a comical revenge.\n\nLicensed under the Creative Commons Attribution license\nhttp://www.bigbuckbunny.org",
+        "Steps": [
+            {
+                "Title": "Support",
+                "Description": "Description",
+                "Amount": 10
+            },
+            {
+                "Title": "Investor",
+                "Description": "Description",
+                "Amount": 50
+            }
+        ],
+        "Tag": "Art",
+        "Media": [
+            {
+                "Type": "Image",
+                "Url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+            },
+            {
+                "Type": "Video",
+                "Url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            }
+        ]
+    }
+]
