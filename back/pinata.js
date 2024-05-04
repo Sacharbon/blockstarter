@@ -1,5 +1,5 @@
-const axios = require("axios");
 const FormData = require("form-data");
+const axios = require("axios");
 
 const JWT = process.env.PINATA_JWT
 
@@ -36,7 +36,6 @@ const pinFileToIPFS = async (data) => {
                 headers: headers,
             },
         );
-        console.log(response.data);
         return response.data.IpfsHash;
     } catch (error) {
         console.error(error);
@@ -63,9 +62,4 @@ async function createNftMetadata(projectName, amount, date) {
     return pinFileToIPFS(metadata);
 }
 
-async function main() {
-    const hash = await createNftMetadata("Test", 1, "2021-10-10");
-    console.log("hash: ", hash);
-}
-
-main()
+module.exports = { pinFileToIPFS, fetchFileFromIPFS, createNftMetadata };
