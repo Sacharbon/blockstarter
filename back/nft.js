@@ -23,8 +23,6 @@ async function mintNFT(wallet, client, uri, flags, issuer, transferfee, tokenTax
         transactionJson.Issuer = issuer
     }
     const tx = await client.submitAndWait(transactionJson, { wallet: wallet} )
-    results = '\nTransaction result: '+ tx.result.meta.TransactionResult
-    console.log(results)
     return tx
 }
 
@@ -37,19 +35,4 @@ async function getNfts(wallet, client) {
     return nfts
 }
 
-const seed = process.env.SEED
-const net = process.env.NET
-console.log('Seed: ' + seed, 'Net: ' + net)
-const uri = "https://xahau-test.net/nft/1"
-const flags = 0
-const transferfee = 0
-const tokenTaxon = 1
-
-async function main() {
-    const [wallet, client] = await connectWallet(seed, net)
-    await mintNFT(wallet, client, uri, flags, "",transferfee, tokenTaxon)
-    const nfts = await getNfts(wallet, client)
-    client.disconnect()
-}
-
-main()
+module.exports = { connectWallet, mintNFT, getNfts }

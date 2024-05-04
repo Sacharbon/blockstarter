@@ -15,9 +15,13 @@
     "@openzeppelin/contracts": "^5.0.2",
     "@peersyst/xrp-evm-contracts": "1.0.1",
     "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.0",
+    "mongoose": "^8.3.3",
     "xrpl": "^2.14.1"
   }
 }
