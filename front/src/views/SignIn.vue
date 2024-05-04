@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Form from '../components/FormLogin.vue'
+import Form from '../components/FormSignIn.vue'
 </script>
 
 <template>
@@ -15,5 +15,9 @@ import Form from '../components/FormLogin.vue'
   align-items: center;
   height: 100vh;
   background-color: #27374D;
+}
+
+h1 {
+  font-size: 3rem;
 }
 </style>
