@@ -15,10 +15,29 @@ export default defineComponent({
 })
 </script>
 
+<script setup lang="ts">
+import axios from "axios";
+import { ref } from "vue";
+
+const projects = ref([]);
+
+axios.get('api/projects')
+  .then((response) => {
+    projects.value = response.data;
+    console.log(projects.value[0].ProjectName)
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+</script>
+
 <template>
   <Carousel :style="{ marginTop:'10vh' }">
-    <Slide v-for="slide in 10" :key="slide">
-      <div class="carousel__item">{{ slide }}</div>
+    <Slide v-for="project in projects" :key="slide">
+      <div class="carousel__item" :style="{ backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }">
+        <p id="name">{{ project.ProjectName }}</p>
+        <p id="desc">{{ project.Description }}</p>
+      </div>
     </Slide>
 
     <template #addons>
@@ -29,16 +48,27 @@ export default defineComponent({
 </template>
 
 <style scoped>
+#desc {
+  font-size: 1rem;
+  color: white;
+  text-align: left;
+}
+
+#name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+
 .carousel__item {
+  padding: 1vw;
   min-height: 40vh;
-  width: 100%;
-  background-color: var(--color-background-soft);
+  width: 95%;
+  background: var(--color-background-soft);
   color: black;
   font-size: 20px;
   border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .carousel__prev,

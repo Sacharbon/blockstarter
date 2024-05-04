@@ -4,8 +4,7 @@
       <h1>{{ title }}</h1>
     </div>
     <div id="content">
-      <div id="card" v-for="project in projects" :key="project.id" :style="{ width: getRandomWidth() + 'vw' }">
-        {{ project.name }}
+      <div id="card" v-for="project in projects" :key="project.id" :style="{ width: getRandomWidth() + 'vw', backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }">
       </div>
     </div>
   </div>
@@ -50,17 +49,18 @@ export default {
 </script>
 
 <script setup>
+import axios from 'axios'
 import { ref } from 'vue'
 const getRandomWidth = () => {
   return Math.floor(Math.random() * (30 - 20 + 1)) + 20;
 }
 
-const projects = ref([
-  {id: 1, name: 'Project 1' },
-  { id: 2, name: 'Project 2' },
-  { id: 3, name: 'Project 3'},
-  { id: 4, name: 'Project 4'},
-  { id: 5, name: 'Project 5'},
-  { id: 6, name: 'Project 6'},
-])
+const projects = ref([])
+axios.get('api/projects')
+  .then((response) => {
+    projects.value = response.data
+  })
+  .catch((error) => {
+    console.error(error)
+  })
 </script>
