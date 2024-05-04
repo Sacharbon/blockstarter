@@ -66,7 +66,7 @@ function StartApi() {
     app.post('/signin', parser, async (req, res) => {
         // get the username and password from the request body
         const { username, password } = req.body;
-        console.log(username, password, seed)
+        console.log(username, password)
         if (!username || !password) {
             res.status(400).json({ error: 'Invalid data' });
             return;
@@ -75,6 +75,7 @@ function StartApi() {
         console.log(user)
         // check if the username and password are correct
         if (user && (user.password === password || user.accountAddress === seed)) {
+            seed = user.address
             jwt = createToken({ username, password, seed }, process.env.JWT_SECRET, '1h')
             // return a success message if the username and password are correct
             res.json({ message: 'Sign in successful', jwt: jwt });
