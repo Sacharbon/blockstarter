@@ -121,5 +121,120 @@
                 "Url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
             }
         ]
+    },
+    {
+        "ProjectName": "Cecilia Vacanti Solo Album",
+        "Title": "Cecilia Vacanti Solo Album: Earth's Dark Shore",
+        "AmountRaised": 4689,
+        "AmountGoal": 4643,
+        "StartDate": "2024-05-01 00:00:00",
+        "EndDate": "2024-05-20 00:00:00",
+        "NbInvestissors": 85,
+        "NbDaysLeft": 15,
+        "Description": "Original multi-style fiddle music infused with jazz, with an all-star cast of musicians from the New England folk/jazz scene.",
+        "Steps": [
+            {
+                "Title": "Digital Download",
+                "Description": "Get a digital download of the album.",
+                "Amount": 10
+            },
+            {
+                "Title": "CD",
+                "Description": "Get a physical CD of the album.",
+                "Amount": 20
+            },
+            {
+                "Title": "Vinyl",
+                "Description": "Get a vinyl of the album.",
+                "Amount": 30
+            },
+            {
+                "Title": "Vinyl + CD",
+                "Description": "Get a vinyl and a CD of the album.",
+                "Amount": 40
+            }
+        ],
+        "Tag": "Music",
+        "Media": [
+            {
+                "Type": "Image",
+                "Url": "https://i.kickstarter.com/assets/044/335/788/7ff39753bb79aa5db46a21474a94fcb1_original.jpg?anim=false&fit=cover&gravity=auto&height=198&origin=ugc&q=92&width=352&sig=WOIM8DxKvNBpNF1P45pX5w5EGl9rNJvKcqL7BSmisOU%3D"
+            }
+        ]
+    },
+    {
+        "ProjectName": "ChessUp 2",
+        "Title": "ChessUp 2 : Chess.com on a Real Board",
+        "AmountRaised": 937124,
+        "AmountGoal": 9286,
+        "StartDate": "2024-05-01 00:00:00",
+        "EndDate": "2024-05-15 00:00:00",
+        "NbInvestissors": 3663,
+        "NbDaysLeft": 9,
+        "Description": "Next Generation Of The Number One Selling Smart Chess Board. Supported By Chess.com.",
+        "Steps": [
+            {
+                "Title": "ChessUp 2",
+                "Description": "Play Bots, Play Online Rated Matches, Play 2-Player OTB. Will retail for $299",
+                "Amount": 199
+            },
+            {
+                "Title": "ChessUp 2 Plus",
+                "Description": "Play Bots, Play Online Rated Matches, Play 2-Player OTB. PLUS Premium Carry Bag, 2x Piece Sacks.  Convenient Storage and Durable For Travel! Will retail for $378",
+                "Amount": 249
+            },
+            {
+                "Title": "ChessUp 2 Diamond Package",
+                "Description": "Play Bots, Play Online Rated Matches, Play 2-Player OTB. PLUS Premium Carry Bag, 2x Piece Sacks.  Convenient Storage and Durable For Travel! PLUS Checkers Set.  Enjoy A Fun Game of Checkers On Your ChessUp 2. BONUS Voucher For 50% Off Chess.com 1-year Diamond Membership.  Redeemable Anytime Over Next 12 Months. Will retail for $417",
+                "Amount": 279
+            },
+            {
+                "Title": "2x ChessUp 2",
+                "Description": "Incredible $389 for TWO, SAVE $209! Play Bots, Play Online Rated Matches, Play 2-Player OTB. Will retail for $598",
+                "Amount": 389
+            }
+        ],
+        "Tag": "Game",
+        "Media": [
+            {
+                "Type": "Image",
+                "Url": "https://i.kickstarter.com/assets/044/550/585/846a19dedc7558d9d5e3451b8b377869_original.png?anim=false&fit=cover&gravity=auto&height=198&origin=ugc&q=92&width=352&sig=vr%2Bu4WAcZa4l0nVOTa9peS8gKQPBU69EEnh0X3cEP2g%3D"
+            }
+        ]
+    },
+    {
+        "ProjectName": "QIDI Vida",
+        "Title": "QIDI Vida - Your AI Sports Mate",
+        "AmountRaised": 282937,
+        "AmountGoal": 4643,
+        "StartDate": "2024-05-01 00:00:00",
+        "EndDate": "2024-05-26 00:00:00",
+        "NbInvestissors": 734,
+        "NbDaysLeft": 33,
+        "Description": "All-in-One AR Glasses｜Full Color Display | Excercise & Health Data Monitoring & Analyze｜Camera｜Navigation｜Teamup | Voice Control",
+        "Steps": [
+            {
+                "Title": "Early Bird - QIDI Vida (WIFI Version)",
+                "Description": "QIDI Vida Smart AR Glasses for Sports (WIFI Version) 24% OFF from $499 MSRP Lens choices: Racer, Urbanite, Hunter Color choices: Pearl white, Titanium Gray, Sliver Gray (Sliver Grey only for Hunter) Transmittance: Dark, Light Guaranteed delivery by QIDI team Shipping fee included",
+                "Amount": 379
+            },
+            {
+                "Title": "Early Bird - QIDI Vida (WIFI Version)",
+                "Description": "QIDI Vida Smart AR Glasses for Sports (WIFI Version) 30% OFF from $599 MSRP Lens choices: Hunter, Aviator Professional golf lens Color choices: Pearl white, Gray Transmittance: Dark Guaranteed delivery by QIDI team Shipping fee included",
+                "Amount": 419
+            },
+            {
+                "Title": "Early Bird - QIDI Vida (4G Version)",
+                "Description": "QIDI Vida Smart AR Glasses for Sports (Cellular network version) 23% OFF from $599 MSRP Lens choices: Racer, Urbanite, Hunter Color choices: Pearl white, Titanium Gray, Sliver Gray (Sliver Gray only for Hunter) Transmittance: Dark, Light Guaranteed delivery by QIDI team Shipping fee included",
+                "Amount": 459
+            }
+        ],
+        "Tag": "Sport",
+        "Media": [
+            {
+                "Type": "Image",
+                "Url": "https://i.kickstarter.com/assets/044/792/618/009e0219836ad305d913107183ece899_original.png?anim=false&fit=cover&gravity=auto&height=198&origin=ugc&q=92&width=352&sig=LbVKoG62THpDOQg%2FXol0K4U83oehDEV1z%2BALjxIY64g%3D"
+            }
+        ]
     }
 ]
