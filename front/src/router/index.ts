@@ -22,16 +22,20 @@ const router = createRouter({
       name: 'project',
       component: Project,
     },
-      {
-        path: '/register',
-        name: 'register',
-        component: Register
-      }
-    // {
-    //   path: '/:pathMatch(.*)*',
-    //   redirect: { name: 'home' }
-    // }
-
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    },
+     {
+       path: '/:pathMatch(.*)*',
+       redirect: { name: 'home' }
+     },
+    {
+      path: '/search',
+      name: 'search',
+      component: () => import('../views/Search.vue')
+    }
   ]
 })
 

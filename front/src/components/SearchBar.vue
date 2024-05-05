@@ -1,9 +1,21 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const research = ref('');
+
+const search = () => {
+  router.push({ name: 'search', query: { research: research.value } });
+}
+</script>
+
 <template>
   <div id="container">
     <h1>BlockStarter</h1>
     <h2>Invest in the future.</h2>
     <div id="bar">
-      <input placeholder="search projects"/>
+      <input v-model="research" @keyup.enter="search" placeholder="search projects"/>
     </div>
   </div>
 </template>
@@ -53,5 +65,3 @@ h2 {
 }
 
 </style>
-<script setup>
-</script>

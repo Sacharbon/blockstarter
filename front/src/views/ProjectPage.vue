@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import People from '../assets/people.svg';
 import Verify from '../assets/verify.svg';
 import Ranking from '../assets/ranking.svg';
@@ -38,12 +38,34 @@ const timeLeft = () => {
   return `${hours}h ${minutes}m ${seconds}s`;
 };
 
-const donation = ref(10);
+let amountButton1Clicked = ref(false);
+let amountButton2Clicked = ref(false);
+const amount = ref(0);
+const buttonColor = ref('light-grey');
+
+const donate = (number, buttonNumber) => {
+  amount.value = number;
+  if (buttonNumber === 1) {
+    amountButton1Clicked.value = true;
+    amountButton2Clicked.value = false;
+  } else if (buttonNumber === 2) {
+    amountButton1Clicked.value = false;
+    amountButton2Clicked.value = true;
+  }
+};
+
+watch([amountButton1Clicked, amountButton2Clicked], () => {
+  if (amountButton1Clicked.value || amountButton2Clicked.value) {
+    buttonColor.value = 'blue';
+  } else {
+    buttonColor.value = 'light';
+  }
+});
 
 const investing = () => {
   axios.post('api/invest', {
     projectName: project.ProjectName,
-    amount: donation,
+    amount: amount,
     date: (new Date()).toDateString()
   }, {
     headers: {
@@ -60,6 +82,7 @@ const investing = () => {
 
 <template>
   <div id="container">
+    <a href="/" id="logo">BlockStarter</a>
     <div id="header">
       <h1>{{ project.ProjectName }}</h1>
     </div>
@@ -89,19 +112,21 @@ const investing = () => {
         </div>
         <div id="step">
           <div></div>
-          <div :style="{display:'flex', flexDirection:'column', alignItems:'center'}">
+          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'space-between'}">
             <Verify />
+            <button @click="donate(project?.Steps[0]?.Amount, 1)" :style="{backgroundColor: amountButton1Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem'}">${{ project?.Steps[0]?.Amount }}</button>
             <p :style="{fontWeight:'bold', fontSize:'1.5rem'}">{{ project?.Steps[0]?.Title }}</p>
           </div>
           <div :style="{width:'1px', height: '100%', backgroundColor:'#2c3e50'}"/>
-          <div :style="{display:'flex', flexDirection:'column', alignItems:'center'}">
+          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'space-between'}">
             <Ranking />
+            <button @click="donate(project?.Steps[1]?.Amount, 2)" :style="{backgroundColor: amountButton2Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem'}">${{ project?.Steps[1]?.Amount }}</button>
             <p :style="{fontWeight:'bold', fontSize:'1.5rem'}">{{ project?.Steps[1]?.Title }}</p>
           </div>
           <div></div>
         </div>
         <div id="invest">
-          <button @click="investing">Invest</button>
+          <button @click="investing" :style="{backgroundColor: buttonColor}">Invest</button>
         </div>
       </div>
     </div>
@@ -109,6 +134,19 @@ const investing = () => {
 </template>
 
 <style scoped>
+#logo {
+    font-weight: bold;
+    margin: 10px;
+    font-size: 2rem;
+    border: none;
+    width: 15vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+  background-image: linear-gradient(to right, #003078 0%, #5ea0ff 50%, #3a8bff 100%);  -webkit-background-clip: text; /* Safari */
+  background-clip: text;
+  color: transparent;
+}
   #step {
     display: flex;
     justify-content: space-between;
@@ -134,10 +172,7 @@ const investing = () => {
   }
   #desc {
     height: 60vh;
-    background-color: var(--color-background-soft);
     width: 35%;
-    border-radius: 15px;
-    box-shadow: 4px 4px 20px 7px rgba(0, 0, 0, 0.1);
     padding: 2rem;
   }
   #image {
@@ -171,5 +206,15 @@ const investing = () => {
     height: 10px;
     background: linear-gradient(to right, #003078 0%, #5ea0ff 50%, #3a8bff 100%);
     border-radius: 25px;
+  }
+  button {
+    margin-top: 5vh;
+    border: none;
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: linear-gradient(to right, #003078 0%, #5ea0ff 50%, #3a8bff 100%);
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
   }
 </style>
