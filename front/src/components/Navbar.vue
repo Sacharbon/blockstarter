@@ -1,29 +1,36 @@
 <script setup lang="ts">
-import 'vuesax/dist/vuesax.css'
+import { ref, computed } from 'vue';
 
+const username = ref(localStorage.getItem('username'));
+
+const isLoggedIn = computed(() => {
+  const token = localStorage.getItem('token');
+  return token !== null && token !== undefined && token !== '';
+});
 </script>
 
 <template>
   <div id="container">
+    <p v-if="isLoggedIn">{{ username }}</p>
+    <a v-else href="/login">Se connecter</a>
   </div>
 </template>
 
 <style scoped>
 
-#panel {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 20%;
+a {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 1.3rem;
+  margin: 1vh;
+  color: #2c3e50;
 }
 
 p {
   font-weight: normal;
-  font-size: 1rem;
+  font-size: 1.3rem;
+  margin: 10px;
   color: #2c3e50;
-  margin: 0;
-  padding: 1vh;
-  transition: background-color 0.5s;
 }
 
 p:hover {
@@ -33,6 +40,6 @@ p:hover {
 #container {
   height: 7vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 </style>

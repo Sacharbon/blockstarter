@@ -27,6 +27,7 @@ const logged = () => {
     })
     .then (response => {
         localStorage.setItem('token', response.data.jwt);
+        localStorage.setItem('username', username.value);
         router.push('/')
     })
     .catch(response => {

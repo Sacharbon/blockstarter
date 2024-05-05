@@ -43,8 +43,10 @@ axios.get('api/projects')
   <Carousel :style="{ marginTop:'10vh' }">
     <Slide v-for="(project, index) in projects" :key="index">
       <div class="carousel__item" :style="{ backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }" @click="goToProject(index, project)">
-        <p id="name">{{ project.ProjectName }}</p>
-        <p id="desc">{{ project.Description }}</p>
+        <div id="infos">
+          <p id="name">{{ project.ProjectName }}</p>
+          <p id="desc">{{ project.Description }}</p>
+        </div>
       </div>
     </Slide>
 
@@ -56,6 +58,13 @@ axios.get('api/projects')
 </template>
 
 <style scoped>
+#infos {
+  background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.5));
+  padding: 1vw;
+  border-radius: 8px 8px 0 0;
+  height: 15vh;
+}
+
 #desc {
   font-size: 1rem;
   color: white;
@@ -70,10 +79,8 @@ axios.get('api/projects')
 }
 
 .carousel__item {
-  padding: 1vw;
   min-height: 40vh;
   width: 95%;
-  background: var(--color-background-soft);
   color: black;
   font-size: 20px;
   border-radius: 8px;
