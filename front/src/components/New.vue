@@ -4,7 +4,7 @@
       <h1>{{ title }}</h1>
     </div>
     <div id="content">
-      <div id="card" v-for="project in projects" :key="project.id" :style="{ width: getRandomWidth() + 'vw', backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }">
+      <div id="card" v-for="project in projects" :key="project.id"  @click="goToProject(project.id, project)" :style="{ width: getRandomWidth() + 'vw', backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }">
       </div>
     </div>
   </div>
@@ -51,8 +51,16 @@ export default {
 <script setup>
 import axios from 'axios'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const route = useRouter()
 const getRandomWidth = () => {
   return Math.floor(Math.random() * (30 - 20 + 1)) + 20;
+}
+
+const goToProject = (index, project) => {
+  localStorage.setItem('project', JSON.stringify(project));
+  route.push('/project')
 }
 
 const projects = ref([])
