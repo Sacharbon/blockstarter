@@ -10,9 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "xrpl": "^2.12.0-beta.0",
-    "@peersyst/xrp-evm-contracts": "1.0.1",
     "@ethersproject/providers": "^5.7.2",
-    "@ethersproject/wallet": "^5.7.0"    
-  }  
+    "@ethersproject/wallet": "^5.7.0",
+    "@peersyst/xrp-evm-contracts": "1.0.1",
+    "five-bells-condition": "^5.0.1",
+    "xrpl": "^2.12.0-beta.0"
+  }
 }
