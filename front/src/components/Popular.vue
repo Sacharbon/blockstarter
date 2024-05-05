@@ -15,11 +15,19 @@ export default defineComponent({
 })
 </script>
 
+
 <script setup lang="ts">
 import axios from "axios";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const projects = ref([]);
+const route = useRouter();
+
+const goToProject = (index, project) => {
+  localStorage.setItem('project', JSON.stringify(project));
+  route.push('/project')
+}
 
 axios.get('api/projects')
   .then((response) => {
@@ -33,8 +41,8 @@ axios.get('api/projects')
 
 <template>
   <Carousel :style="{ marginTop:'10vh' }">
-    <Slide v-for="project in projects" :key="slide">
-      <div class="carousel__item" :style="{ backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }">
+    <Slide v-for="(project, index) in projects" :key="index">
+      <div class="carousel__item" :style="{ backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize:'cover' }" @click="goToProject(index, project)">
         <p id="name">{{ project.ProjectName }}</p>
         <p id="desc">{{ project.Description }}</p>
       </div>

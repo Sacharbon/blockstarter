@@ -1,22 +1,12 @@
-<script setup>
-import { useRouter } from 'vue-router'
-
-const router = useRouter()
-
-const logged = () => {
-  router.push('/')
-}
-</script>
-
 <template>
   <main>
     <h1>Welcome back.</h1>
     <form>
       <div id="input">
-        <input type="email" name="email" placeholder="Email" required>
+        <input v-model="username" name="username" placeholder="Username" required>
       </div>
       <div id="input">
-        <input type="password" name="password" placeholder="Password" required>
+        <input v-model="password" type="password" name="password" placeholder="Password" required>
       </div>
     </form>
     <p id="forgot">Forgot password ?</p>
@@ -26,6 +16,30 @@ const logged = () => {
     </div>
   </main>
 </template>
+
+<script setup>
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+import axios from 'axios'
+
+const router = useRouter()
+
+const username = ref('')
+const password = ref('')
+const logged = () => {
+    axios.post('api/signin', {
+      username: username.value,
+      password: password.value
+    })
+    .then (response => {
+        localStorage.setItem('token', response.data.jwt);
+        router.push('/')
+    })
+    .catch(response => {
+        console.log(response)
+    })
+}
+</script>
 
 <style scoped>
 

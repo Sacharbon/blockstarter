@@ -28,10 +28,10 @@
     </div>
     <!-- <progress :value="project.AmountRaised" :max="project.AmountGoal"></progress> -->
   </template>
-  
+
   <script>
   import axios from 'axios';
-  
+
   export default {
     data() {
       return {
@@ -66,8 +66,8 @@
     }
   };
   </script>
-  
-  
+
+
   <style scoped>
   .AmountRaised {
     font-size: 3rem;
@@ -104,29 +104,29 @@
     margin-bottom: 20px;
     display: flex;
   }
-  
+
   .project-card-content {
     display: flex;
     width: 100%;
   }
-  
+
   .video-container {
     width: 50%;
   }
-  
+
   .video-container video {
     width: 100%;
   }
-  
+
   .info-container {
     width: 50%;
     padding: 20px;
   }
-  
+
   .steps {
     margin-top: 10px;
   }
-  
+
   .progress-bar {
       width: 100%;
       height: 15px;
@@ -135,12 +135,12 @@
       margin-top: 10px;
       overflow: hidden;
     }
-    
+
     .progress {
         height: 100%;
         background-color: #2A7118;
     }
-    
+
     .button-container {
   display: flex;
   justify-content: space-between;
