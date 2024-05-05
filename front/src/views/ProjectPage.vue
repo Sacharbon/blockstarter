@@ -65,7 +65,7 @@ watch([amountButton1Clicked, amountButton2Clicked], () => {
 const investing = () => {
   axios.post('api/invest', {
     projectName: project.ProjectName,
-    amount: amount,
+    amount: amount.value,
     date: (new Date()).toDateString()
   }, {
     headers: {

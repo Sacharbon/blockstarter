@@ -104,9 +104,9 @@ function StartApi() {
         const [wallet, client] = await connectWallet(accountAddress, process.env.NET)
         // mint the nft with the ipfs hash
         tx = await mintNFT(wallet, client, ipfsUrl + ipfsHash, 0, "", 0, 1);
-        console.log(tx);
+        console.log("hash:", tx.result.hash);
         // return the IPFS hash as a response
-        res.json({ "url": ipfsUrl + ipfsHash });
+        res.json({ "url": ipfsUrl + ipfsHash, "nftHash": tx.result.hash });
     });
 
     app.get('/projects', (req, res) => {
