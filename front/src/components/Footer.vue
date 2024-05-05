@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2024 BlockStarter. All rights reserved.</p>
+      <p>© 2024 BlockStarter. Open source.</p>
     </div>
   </footer>
 </template>

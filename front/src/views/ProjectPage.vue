@@ -84,7 +84,7 @@ const investing = () => {
   <div id="container">
     <a href="/" id="logo">BlockStarter</a>
     <div id="header">
-      <h1>{{ project.ProjectName }}</h1>
+      <h1>{{ project?.ProjectName }}</h1>
     </div>
     <div id="time">
       <div :style="{display:'flex', justifyContent:'flex-end'}">
@@ -95,38 +95,38 @@ const investing = () => {
       </div>
     </div>
     <div id="content">
-      <div id="image" :style="{ backgroundImage: `url(${project.Media.find(media => media.Type === 'Image').Url})`, backgroundSize: 'cover' }" />
+      <div id="image" :style="{ backgroundImage: `url(${project?.Media.find(media => media.Type === 'Image').Url})`, backgroundSize: 'cover' }" />
       <div id="desc">
         <div id="fund">
-          <p :style="{ fontWeight:'Bold', color:'#2c3e50', fontSize:'2rem' }">{{ formatCurrency(project.AmountRaised) }}<span :style="{fontSize:'1.3rem'}"> / {{formatCurrency(project.AmountGoal)}}</span></p>
+          <p :style="{ fontWeight:'Bold', color:'#2c3e50', fontSize:'2rem' }">{{ formatCurrency(project?.AmountRaised) }}<span :style="{fontSize:'1.3rem'}"> / {{formatCurrency(project?.AmountGoal)}}</span></p>
           <div id="progress-bar-container">
             <div id="progress-bar" />
           </div>
           <div id="investors">
             <People />
-            <p :style="{marginLeft:'3px', fontSize:'1.2rem'}">{{ project.NbInvestissors }} investors</p>
+            <p :style="{marginLeft:'3px', fontSize:'1.2rem'}">{{ project?.NbInvestissors }} investors</p>
           </div>
         </div>
         <div id="description">
-          <p>{{ project.Description }}</p>
+          <p>{{ project?.Description }}</p>
         </div>
         <div id="step">
           <div></div>
-          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'space-between'}">
+          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', width:'50%'}">
             <Verify />
-            <button @click="donate(project?.Steps[0]?.Amount, 1)" :style="{backgroundColor: amountButton1Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem'}">${{ project?.Steps[0]?.Amount }}</button>
-            <p :style="{fontWeight:'bold', fontSize:'1.5rem'}">{{ project?.Steps[0]?.Title }}</p>
+            <button @click="donate(project?.Steps[0]?.Amount, 1)" :style="{backgroundColor: amountButton1Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem', width:'50%', marginTop:'3vh', marginBottom:'3vh'}">${{ project?.Steps[0]?.Amount }}</button>
+            <p :style="{fontWeight:'normal', fontSize:'1.5rem'}">{{ project?.Steps[0]?.Title }}</p>
           </div>
-          <div :style="{width:'1px', height: '100%', backgroundColor:'#2c3e50'}"/>
-          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'space-between'}">
+          <div :style="{width:'1px', height: '20vh', backgroundColor:'#2c3e50'}"/>
+          <div :style="{display:'flex', flexDirection:'column', alignItems:'center', width:'50%'}">
             <Ranking />
-            <button @click="donate(project?.Steps[1]?.Amount, 2)" :style="{backgroundColor: amountButton2Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem'}">${{ project?.Steps[1]?.Amount }}</button>
-            <p :style="{fontWeight:'bold', fontSize:'1.5rem'}">{{ project?.Steps[1]?.Title }}</p>
+            <button @click="donate(project?.Steps[1]?.Amount, 2)" :style="{backgroundColor: amountButton2Clicked ? 'blue' : 'grey', fontWeight:'bold', fontSize:'1.5rem', width:'50%', marginTop:'3vh', marginBottom:'3vh'}">${{ project?.Steps[1]?.Amount }}</button>
+            <p :style="{fontWeight:'normal', fontSize:'1.5rem'}">{{ project?.Steps[1]?.Title }}</p>
           </div>
           <div></div>
         </div>
         <div id="invest">
-          <button @click="investing" :style="{backgroundColor: buttonColor}">Invest</button>
+          <button @click="investing" :style="{backgroundColor: buttonColor, marginTop:'3vh'}">Invest</button>
         </div>
       </div>
     </div>
@@ -151,7 +151,7 @@ const investing = () => {
     display: flex;
     justify-content: space-between;
     margin-top: 5vh;
-    height: 20vh;
+    //height: 20vh;
   }
   #investors {
     margin-top: 1rem;
@@ -208,13 +208,17 @@ const investing = () => {
     border-radius: 25px;
   }
   button {
-    margin-top: 5vh;
+    //margin-top: 5vh;
     border: none;
     border-radius: 5px;
     padding: 1rem;
-    background-color: linear-gradient(to right, #003078 0%, #5ea0ff 50%, #3a8bff 100%);
+    //background: linear-gradient(to right, #095bc6 0%, #3a8bff 100%);
     width: 100%;
     font-weight: bold;
     font-size: 1rem;
+  }
+
+  button:hover {
+    cursor: pointer;
   }
 </style>
