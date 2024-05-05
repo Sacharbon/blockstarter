@@ -13,11 +13,7 @@ import Form from '../components/FormLogin.vue'
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
-  background-color: #27374D;
-}
-
-h1 {
-  font-size: 3rem;
 }
 </style>

@@ -1,11 +1,16 @@
 <script setup>
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
+const address = ref([])
+const password = ref([])
+
 const SignUp = () => {
   router.push('/dashboard')
 }
+
 </script>
 
 <template>
