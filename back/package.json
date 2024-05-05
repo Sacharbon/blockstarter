@@ -12,8 +12,22 @@
   "dependencies": {
     "@ethersproject/providers": "^5.7.2",
     "@ethersproject/wallet": "^5.7.0",
+<<<<<<< HEAD
     "@peersyst/xrp-evm-contracts": "1.0.1",
     "five-bells-condition": "^5.0.1",
     "xrpl": "^2.12.0-beta.0"
+=======
+    "@openzeppelin/contracts": "^5.0.2",
+    "@peersyst/xrp-evm-contracts": "1.0.1",
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2",
+    "form-data": "^4.0.0",
+    "fs": "^0.0.1-security",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.6.0",
+    "mongoose": "^8.3.3",
+    "xrpl": "^2.14.1"
+>>>>>>> 2dfc511f38a79c2e6411ceb2a22ef9307aec50ee
   }
 }
