@@ -1,27 +1,3 @@
-<template>
-  <div id="container">
-    <div id="form">
-      <h1>Register</h1>
-      <div id="input">
-        <input type="text" placeholder="Enter your username" v-model="username" />
-      </div>
-      <div id="input">
-        <input type="text" placeholder="Enter your address" v-model="seed" />
-      </div>
-      <div id="input">
-        <input type="password" placeholder="Enter your password" v-model="password" />
-      </div>
-      <div id="input">
-        <input type="password" placeholder="Confirm your password" v-model="confirmPassword" />
-        <p v-if="password !== confirmPassword && confirmPassword !== ''">Passwords do not match</p>
-      </div>
-      <div id="bottom">
-        <button @click="SignUp">Sign Up</button>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
@@ -40,35 +16,64 @@ const SignUp = () => {
       username: username.value,
       password: password.value
     })
-        .then (response => {
-          localStorage.setItem('token', response.data.jwt);
-          router.push('/')
-        })
-        .catch(response => {
-          console.log(response)
-        })
+    .then (response => {
+      localStorage.setItem('token', response.data.jwt);
+      router.push('/')
+    })
+    .catch(response => {
+      console.log(response)
+    })
   }
 }
 </script>
 
+<template>
+  <div id="container">
+    <h1 :style="{fontSize:'3vw', marginBottom:'3vh'}">Welcome to Blockstarter!</h1>
+    <div id="form">
+      <label>Address</label>
+      <input type="text" placeholder="Enter your XRP Address" v-model="username" />
+      <label :style="{marginTop:'2vh'}">Username</label>
+      <input type="text" placeholder="Enter your username" v-model="username" />
+      <label :style="{marginTop:'2vh'}">Password</label>
+      <input type="password" placeholder="Enter your password" v-model="password" />
+      <input type="password" placeholder="Confirm your password" v-model="confirmPassword" :style="{marginTop:'1vh'}"/>
+      <p v-if="password !== confirmPassword && confirmPassword !== ''">Passwords do not match</p>
+      <button @click="SignUp">Sign Up</button>
+    </div>
+  </div>
+</template>
+
 <style scoped>
-#form {
-  background-color: white;
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
 }
-#input {
-  margin-bottom: 20px;
+#form {
+  display: flex;
+  flex-direction: column;
 }
 
 input {
   transition: all 0.3s ease;
-}
-
-input:focus {
-  border-color: #86C7F6;
+  width: 30vw;
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid grey;
 }
 
 p {
-  color: red;
   margin-top: 5px;
+}
+
+button {
+  margin-top: 2vh;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
 }
 </style>

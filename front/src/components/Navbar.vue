@@ -5,13 +5,6 @@ import 'vuesax/dist/vuesax.css'
 
 <template>
   <div id="container">
-    <div id="panel">
-      <p>Investments</p>
-      <p>|</p>
-      <p>Likes</p>
-      <p>|</p>
-      <p>Account</p>
-    </div>
   </div>
 </template>
 

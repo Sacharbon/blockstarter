@@ -1,20 +1,14 @@
 <template>
-  <main>
-    <h1>Welcome back.</h1>
-    <form>
-      <div id="input">
-        <input v-model="username" name="username" placeholder="Username" required>
-      </div>
-      <div id="input">
-        <input v-model="password" type="password" name="password" placeholder="Password" required>
-      </div>
-    </form>
-    <p id="forgot">Forgot password ?</p>
-    <div id="bottom">
-      <button @click="logged">Log in</button>
-      <p>Haven’t signed up yet ? <span class="get-started">Get Started</span></p>
-    </div>
-  </main>
+  <h1 :style="{fontSize:'3vw', marginBottom:'3vh'}">Welcome back.</h1>
+  <div id="form">
+    <label>Username</label>
+    <input type="text" placeholder="Enter your username" v-model="username" />
+    <label :style="{marginTop:'2vh'}">Password</label>
+    <input type="password" placeholder="Enter your password" v-model="password" />
+    <a id="forgot" href="https://google.com">Forgot password ?</a>
+    <button @click="logged">Log in</button>
+    <p>Haven’t signed up yet ? <a href="/register">Get Started</a></p>
+  </div>
 </template>
 
 <script setup>
@@ -42,84 +36,37 @@ const logged = () => {
 </script>
 
 <style scoped>
-
-.get-started:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.get-started {
-  color: #86C7F6;
-}
-
-#bottom {
-  color: #9DB2BF;
+#form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-
-button {
-  width: 100%;
-  padding: 1vh;
-  border: none;
-  border-radius: 15px;
-  background-color: #9DB2BF;
-  color: #27374D;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 1vh;
-}
-
-#forgot:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#forgot {
-  color: #86C7F6;
-  font-size: 0.8rem;
-  margin-bottom: 5vh;
 }
 
 input {
-  width: 100%;
-  padding: 1vh;
-  border: none;
-  outline: none;
-  background-color: #DDE6ED;
-  color: #27374D;
-}
-
-#input {
-  width: 100%;
-  padding: 1vh;
-  border: none;
-  border-radius: 15px;
-  background-color: #DDE6ED;
-}
-
-h1 {
-  color: #9DB2BF;
-  font-size: 2.5rem;
-  font-weight: bold;
-  margin-bottom: 5vh;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-}
-
-main {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  transition: all 0.3s ease;
   width: 30vw;
-  background-color: #526D82;
-  border-radius: 3%;
-  padding: 1.5vw;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 5px 4px 50px 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background: transparent;
+  border: 1px solid grey;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 2vh;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
 }
 </style>
