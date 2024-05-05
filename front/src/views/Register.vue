@@ -32,7 +32,7 @@ const SignUp = () => {
     <h1 :style="{fontSize:'3vw', marginBottom:'3vh'}">Welcome to Blockstarter!</h1>
     <div id="form">
       <label>Address</label>
-      <input type="text" placeholder="Enter your XRP Address" v-model="username" />
+      <input type="text" placeholder="Enter your XRP Address" v-model="seed" />
       <label :style="{marginTop:'2vh'}">Username</label>
       <input type="text" placeholder="Enter your username" v-model="username" />
       <label :style="{marginTop:'2vh'}">Password</label>
