@@ -62,7 +62,11 @@ input {
   width: 30vw;
   padding: 1rem;
   background: transparent;
-  border: 1px solid grey;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+input:focus {
+  border: 1px solid rgba(128, 128, 128, 1);
 }
 
 p {
