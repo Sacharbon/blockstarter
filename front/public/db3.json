@@ -1,0 +1,370 @@
+{
+    "projects" : [
+        {
+            "name" : "Project 1",
+            "description" : "This is project 1",
+            "tag" : "Art",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 51347,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 2,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 50
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 2",
+            "description" : "This is project 2",
+            "tag" : "Technology",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 1327,
+                "amountGoal": 10000,
+                "startDate": "2024-05-03",
+                "endDate": "2024-05-10",
+                "daysLeft": 7,
+                "investors": 53,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 30
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 3",
+            "description" : "This is project 3",
+            "tag" : "Business",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 3056248,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 1398,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 25
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 100
+                    },
+                    {
+                        "title": "Top Investor",
+                        "description": "Description of top investor",
+                        "amount": 250
+                    }
+                ]
+            }
+        }, 
+        {
+            "name" : "Project 4",
+            "description" : "This is project 4",
+            "tag" : "Art",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 51347,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 2,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 50
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 5",
+            "description" : "This is project 5",
+            "tag" : "Technology",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 1327,
+                "amountGoal": 10000,
+                "startDate": "2024-05-03",
+                "endDate": "2024-05-10",
+                "daysLeft": 7,
+                "investors": 53,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 30
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 6",
+            "description" : "This is project 6",
+            "tag" : "Business",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 3056248,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 1398,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 25
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 100
+                    },
+                    {
+                        "title": "Top Investor",
+                        "description": "Description of top investor",
+                        "amount": 250
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 7",
+            "description" : "This is project 7",
+            "tag" : "Art",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 51347,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 2,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 50
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 8",
+            "description" : "This is project 8",
+            "tag" : "Technology",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 1327,
+                "amountGoal": 10000,
+                "startDate": "2024-05-03",
+                "endDate": "2024-05-10",
+                "daysLeft": 7,
+                "investors": 53,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 10
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 30
+                    }
+                ]
+            }
+        },
+        {
+            "name" : "Project 9",
+            "description" : "This is project 9",
+            "tag" : "Business",
+            "media": [
+                {
+                    "type": "Image",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                },
+                {
+                    "type": "Video",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                },
+                {
+                    "type": "Banner",
+                    "url": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+                }
+            ],
+            "funding": {
+                "amountRaised": 3056248,
+                "amountGoal": 100000,
+                "startDate": "2024-05-01",
+                "endDate": "2024-05-10",
+                "daysLeft": 10,
+                "investors": 1398,
+                "steps": [
+                    {
+                        "title": "Support",
+                        "description": "Description of support",
+                        "amount": 25
+                    },
+                    {
+                        "title": "Investor",
+                        "description": "Description of investor",
+                        "amount": 100
+                    },
+                    {
+                        "title": "Top Investor",
+                        "description": "Description of top investor",
+                        "amount": 250
+                    }
+                ]
+            }
+        }
+    ]
+}
